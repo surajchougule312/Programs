@@ -1,0 +1,44 @@
+/*accept n numbes from user and return numbers which are gretter than 10 and smaller than 20 numbers*/
+
+
+#include<stdio.h>
+#include<stdlib.h>
+int Count(int Arr[],int iSize)
+{
+	int i=0,iCnt=0;
+	for(i=0;i<iSize;i++)
+	{
+		if((Arr[i]>10) && (Arr[i]<20))
+		{
+			iCnt++;
+		}
+	}
+	return iCnt;
+}
+
+int main()
+{
+	int *ptr=NULL;
+	int iLength=0,i=0;
+	int iRet=0;
+	printf("Enter numbers of elements\n");
+	scanf("%d",&iLength);
+	ptr=(int*)malloc(sizeof(int)*iLength);
+	printf("Enter elements\n");
+	for(i=0;i<iLength;i++)
+	{
+		scanf("%d",&ptr[i]);
+	}
+	printf("Entered data is:");
+	{
+		for(i=0;i<iLength;i++)
+		{
+			printf("%d\t",ptr[i]);
+		}
+		printf("\n\n");
+	}
+	iRet=Count(ptr,iLength);
+	printf("Addition is:%d\n",iRet);
+	free(ptr);
+	return 0;
+}
